@@ -14,11 +14,11 @@ class StackTests(unittest.TestCase):
         """
         self.stack=Stack()
     
-    def tearDown(self):
-        """
-        call this at the end of each tests, wheter the test fail or not
-        """
-        self.stack=Stack()
+#     def tearDown(self):
+#         """
+#         call this at the end of each tests, wheter the test fail or not
+#         """
+#         self.stack=Stack()
 
     def testPush(self):
         """
@@ -83,6 +83,14 @@ class StackTests(unittest.TestCase):
         self.stack=Stack()
         with self.assertRaises(IndexError):
             self.stack.summit()
+            
+    def testSize2(self):
+        elements=["hello", "I'm", "Under", "The", "Water", "Please", "Help", "Me"]
+        for e in elements:
+            self.stack.push(e)
+        longueur=self.stack.size()
+        self.assertEqual(longueur, 8,  "la longueur devrait être de %s alors qu'elle est de %s."%(longueur, 8))
+        
         
 if __name__ == '__main__':
     unittest.main()        

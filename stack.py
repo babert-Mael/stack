@@ -45,4 +45,3 @@ class Stack:
         """
         return len(self._element)
         
-        
