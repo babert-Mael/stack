@@ -25,3 +25,5 @@ def calcul(operation):
             resultat=op2**op1  
         pile.push(resultat)
     return pile.pop()
+
+
