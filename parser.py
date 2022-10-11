@@ -1,20 +1,21 @@
-from stack import Stack
-
-p=Stack()
-
-
-        
+from stack import Stack     
 
 def pars_checker(string):
     pile=Stack()
+    codes={')':'(', ']':'[', '}':'{'}
     for l in string:
-        if l=='(':
+        if l in codes.values():
             pile.push(l)
-        elif l==")":
-            try:
-                pile.pop()
-            except IndexError:
+        
+        elif l in codes.keys():
+            try: #si le dernier (en haut) element de la pile est "(" enleve le
+                if pile.summit()==codes[l]:
+                    pile.pop()
+                else:
+                    return False
+            except IndexError: #sauf si il y a pas d'element
                 return False
+                
     return pile.size()==0
     
         

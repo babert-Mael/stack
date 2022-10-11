@@ -36,6 +36,7 @@ class Stack:
         red the top element of the stack without removing it.
         return the top element.
         """
+
         return self._element[-1]
 
     def size(self):
