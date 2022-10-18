@@ -47,4 +47,8 @@ class Stack:
         return len(self._element)
         
     def show(self):
+        """
+        read the elements of the stack
+        return the elements as a tuple
+        """
         return tuple(self._element)
