@@ -46,3 +46,5 @@ class Stack:
         """
         return len(self._element)
         
+    def show(self):
+        return tuple(self._element)
